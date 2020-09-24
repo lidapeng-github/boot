@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dapeng.demo03.dao.EmpDao">
+
+    <select id="getAll" resultType="com.dapeng.demo03.pojo.Emp">
+       select * from emp
+
+    </select>
+
+    <select id="queryById" resultType="com.dapeng.demo03.pojo.Emp">
+        select * from emp where EMPNO = #{id}
+    </select>
+
+    <insert id="add" parameterType="com.dapeng.demo03.pojo.Emp">
+        insert into emp (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) VALUES
+        (#{empNo},#{eName},#{job},#{mgr},#{hireDate},#{sal},#{comm},#{deptNo})
+    </insert>
+
+    <update id="update" parameterType="com.dapeng.demo03.pojo.Emp">
+        update  emp  set  ENAME=#{eName},JOB=#{job},MGR=#{mgr},HIREDATE=#{hireDate},SAL=#{sal},COMM=#{comm},DEPTNO=#{deptNo} WHERE EMPNO=#{empNo}
+
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete  from emp where EMPNO = #{id}
+    </delete>
+
+
+</mapper>

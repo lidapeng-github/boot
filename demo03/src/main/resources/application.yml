@@ -1,0 +1,23 @@
+spring:
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.login
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/bj?useSSL=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd
+server:
+  servlet:
+    context-path: /crud
+
+mybatis:
+  type-aliases-package: com.dapeng.demo03.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
